@@ -1,6 +1,19 @@
-window.onload = function() {
-    alert("Hello JavaScript!");
-};
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop-up JavaScript</title>
+    <script>
+        window.onload = function() {
+            alert("Hello JavaScript!");
+        };
+    </script>
+</head>
 
+<body>
+<main>
 
-
+ </main>
+</body>
+</html>
