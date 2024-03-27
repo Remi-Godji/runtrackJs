@@ -1,0 +1,35 @@
+body {
+    min-height: 4096px;
+    margin: 0; /* Pour s'assurer qu'il n'y a pas de marges par défaut */
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px; /* Hauteur initiale du footer */
+    background-color: blue; /* Couleur de fond par défaut */
+    transition: height 0.3s, background-color 0.3s; /* Ajout d'une transition fluide */
+}
+
+/* Définition des différentes couleurs en fonction du pourcentage de scrolling */
+footer.scroll-0 {
+    background-color: blue;
+}
+
+footer.scroll-25 {
+    background-color: green;
+}
+
+footer.scroll-50 {
+    background-color: yellow;
+}
+
+footer.scroll-75 {
+    background-color: orange;
+}
+
+footer.scroll-100 {
+    background-color: red;
+}
