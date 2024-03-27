@@ -1,70 +1,63 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const shuffleButton = document.getElementById('shuffleButton');
-    const checkButton = document.getElementById('checkButton');
-    const imageContainer = document.getElementById('imageContainer');
-    const message = document.getElementById('message');
+$(document).ready(function() {
+    const shuffleButton = $('#shuffleButton');
+    const checkButton = $('#checkButton');
+    const imageContainer = $('#imageContainer');
+    const message = $('#message');
   
     // Mélanger les images aléatoirement
-    shuffleButton.addEventListener('click', function() {
-      const images = Array.from(imageContainer.children);
+    shuffleButton.on('click', function() {
+      const images = imageContainer.children();
       images.sort(() => Math.random() - 0.5);
-      imageContainer.innerHTML = '';
-      images.forEach(img => {
-        imageContainer.appendChild(img);
-      });
-      message.textContent = '';
+      imageContainer.html('');
+      images.appendTo(imageContainer);
+      message.text('');
     });
   
     // Vérifier si les images sont dans le bon ordre
     function checkOrder() {
-      const images = Array.from(imageContainer.children);
-      const imageOrder = images.map(img => img.id).join('');
+      const images = imageContainer.children();
+      const imageOrder = images.map(function() {
+        return this.id;
+      }).get().join('');
       const correctOrder = 'image1image2image3image4image5image6';
       if (imageOrder === correctOrder) {
-        message.textContent = 'Vous avez gagné';
-        message.style.color = 'green';
+        message.text('Vous avez gagné').css('color', 'green');
       } else {
-        message.textContent = 'Vous avez perdu';
-        message.style.color = 'red';
+        message.text('Vous avez perdu').css('color', 'red');
       }
     }
   
-    checkButton.addEventListener('click', checkOrder);
+    checkButton.on('click', checkOrder);
   
     // Activer le déplacement des images
     let dragged;
   
-    document.addEventListener('dragstart', function(event) {
-      dragged = event.target;
+    $(document).on('dragstart', '.draggable', function(event) {
+      dragged = $(this);
+      event.originalEvent.dataTransfer.setData('text', 'dragging');
       event.target.style.opacity = .5;
     });
   
-    document.addEventListener('dragend', function(event) {
+    $(document).on('dragend', '.draggable', function(event) {
       event.target.style.opacity = '';
     });
   
-    document.addEventListener('dragover', function(event) {
+    $(document).on('dragover', function(event) {
       event.preventDefault();
     });
   
-    document.addEventListener('dragenter', function(event) {
-      if (event.target.className === 'draggable') {
-        event.target.style.background = 'lightgray';
-      }
+    $(document).on('dragenter', '.draggable', function(event) {
+      event.target.style.background = 'lightgray';
     });
   
-    document.addEventListener('dragleave', function(event) {
-      if (event.target.className === 'draggable') {
-        event.target.style.background = '';
-      }
+    $(document).on('dragleave', '.draggable', function(event) {
+      event.target.style.background = '';
     });
   
-    document.addEventListener('drop', function(event) {
+    $(document).on('drop', '.draggable', function(event) {
       event.preventDefault();
-      if (event.target.className === 'draggable') {
-        event.target.style.background = '';
-        imageContainer.insertBefore(dragged, event.target);
-      }
+      event.target.style.background = '';
+      imageContainer.append(dragged);
     });
   });
   
