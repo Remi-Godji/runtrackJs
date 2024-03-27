@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #fff;
+    padding: 20px;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+h1 {
+    color: #0104a6;
+}
+
+p {
+    font-size: 18px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px; /* Hauteur initiale du footer */
+    background-color: #007bff; /* Couleur de fond par défaut */
+    transition: height 0.3s, background-color 0.3s; /* Ajout d'une transition fluide */
+}
+
+/* Définition des différentes couleurs en fonction du pourcentage de scrolling */
+footer.scroll-0 {
+    background-color: #0104a6;
+}
+
+footer.scroll-25 {
+    background-color: #ffffff;
+}
+
+footer.scroll-50 {
+    background-color: #b4b9c5;
+}
+
+footer.scroll-75 {
+    background-color: #0104a6;
+}
+
+footer.scroll-100 {
+    background-color: #ffffff;
+}
