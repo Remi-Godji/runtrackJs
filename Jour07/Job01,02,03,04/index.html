@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   
+   <style>
+    body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+    main {
+        flex: 1;
+    }
+</style>
+</head>
+<body>
+
+    
+    <header>
+        <nav>
+            <div class="container">
+                <ul class="row">
+                    <li class="col s3"><a href="#accueil">Accueil</a></li>
+                    <li class="col s3"><a href="#inscription">Inscription</a></li>
+                    <li class="col s3"><a href="#connexion">Connexion</a></li>
+                    <li class="col s3"><a href="#rechercher">Rechercher</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <div class="container">
+            <h2>Création de compte</h2>
+            <form action="#" method="post">
+                <div class="input-field">
+                    <i class="material-icons prefix">person</i>
+                    <input type="text" id="prenom" name="prenom" class="validate">
+                    <label for="prenom" class="active">Prénom</label>
+                </div>
+                
+                <div class="input-field">
+                    <i class="material-icons prefix">person</i>
+                    <input type="text" id="nom" name="nom" class="validate">
+                    <label for="nom" class="active">Nom</label>
+                </div>
+                
+                <div class="input-field">
+                    <i class="material-icons prefix">email</i>
+                    <input type="email" id="email" name="email" class="validate">
+                    <label for="email" class="active">Adresse email</label>
+                </div>
+                
+                <div class="input-field">
+                    <i class="material-icons prefix">lock</i>
+                    <input type="password" id="password" name="password" class="validate">
+                    <label for="password" class="active">Mot de passe</label>
+                </div>
+                
+                <div class="input-field">
+                    <i class="material-icons prefix">lock</i>
+                    <input type="password" id="confirm_password" name="confirm_password" class="validate">
+                    <label for="confirm_password" class="active">Confirmation mot de passe</label>
+                </div>
+                
+                <div class="input-field">
+                    <p>Passions:</p>
+                    <div>
+                        <label>
+                            <input type="checkbox" id="informatique" name="passion" value="informatique">
+                            <span>Informatique</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="checkbox" id="voyages" name="passion" value="voyages">
+                            <span>Voyages</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="checkbox" id="sport" name="passion" value="sport">
+                            <span>Sport</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <input type="checkbox" id="lecture" name="passion" value="lecture">
+                            <span>Lecture</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <button class="btn waves-effect waves-light" type="submit" name="action">Valider
+                    <i class="material-icons right">send</i>
+                </button>
+            </form>
+        </div>
+    </section>
+ <br>  <br> <br> <br> <br> <br> <br> <br> 
+    <footer class= "teal lighten-2">
+        <div class="container">
+            <ul class="row center-align">
+                <li class="col s3"><a href="#accueil" class="white-text">Accueil</a></li>
+                <li class="col s3"><a href="#inscription" class="white-text">Inscription</a></li>
+                <li class="col s3"><a href="#connexion" class="white-text">Connexion</a></li>
+                <li class="col s3"><a href="#rechercher" class="white-text">Rechercher</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
